@@ -15,11 +15,11 @@ public class Condition {
 
     private String fileName;
 
-    Condition(String s) {
+    Condition(String s){
         fileName = s;
     }
 
-    public void createCondition() {
+    public void createCondition(){
         JSONObject obj = new JSONObject();
         obj.put("left", "[");
         obj.put("right", "]");
@@ -29,32 +29,33 @@ public class Condition {
         obj2.put("left", "{");
         obj2.put("right", "}");
         arr.add(obj2);
-        JSONObject brackets = new JSONObject();
-        brackets.put("bracket", arr);
-        try (FileWriter f = new FileWriter(fileName)) {
-            f.write(brackets.toJSONString());
+        JSONObject obj3 = new JSONObject();
+        obj3.put("bracket", arr);
+        try (FileWriter f = new FileWriter(fileName)){
+            f.write(obj3.toJSONString());
             f.flush();
-        } catch (IOException e) {
+        }
+        catch(IOException e){
             System.out.println("error");
         }
     }
 
-    public void readCondition(Map<String, String> leftBracket, Map<String, String> rightBracket) {
+    public void readCondition( Map<String, String> leftBracket, Map<String, String> rightBracket){
         JSONParser parser = new JSONParser();
-        try {
+        try{
             JSONObject obj = (JSONObject) parser.parse(new FileReader(fileName));
             JSONArray bracket = (JSONArray) obj.get("bracket");
 
 
             Iterator<JSONObject> it = bracket.iterator();
-            while (it.hasNext()) {
+            while(it.hasNext()){
                 JSONObject ob = it.next();
                 String l = (String) ob.get("left");
                 String r = (String) ob.get("right");
-                if (rightBracket.get(r) == null && leftBracket.get(l) == null) {
+                if (rightBracket.get(r) == null && leftBracket.get(l)==null){
 
-                    leftBracket.put(l, r);
-                    rightBracket.put(r, l);
+                    leftBracket.put(l,r);
+                    rightBracket.put(r,l);
 
 
                 }
@@ -64,7 +65,8 @@ public class Condition {
 //                }
             }
 
-        } catch (IOException | ParseException p) {
+        }
+        catch (IOException | ParseException p){
             System.out.println("error in reading");
         }
     }
