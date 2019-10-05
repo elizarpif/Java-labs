@@ -8,7 +8,6 @@ import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -35,7 +34,6 @@ public class Condition {
         try (FileWriter f = new FileWriter(fileName)){
             f.write(obj3.toJSONString());
             f.flush();
-            f.close();
         }
         catch(IOException e){
             System.out.println("error");
@@ -54,10 +52,17 @@ public class Condition {
                 JSONObject ob = it.next();
                 String l = (String) ob.get("left");
                 String r = (String) ob.get("right");
-                if (rightBracket.get(r) == null){
+                if (rightBracket.get(r) == null && leftBracket.get(l)==null){
+
                     leftBracket.put(l,r);
                     rightBracket.put(r,l);
+
+
                 }
+//                if (!rightBracket.get(r).equals(l) && !leftBracket.get(l).equals(r)){
+//                    leftBracket.put(l,r);
+//                    rightBracket.put(r,l);
+//                }
             }
 
         }
