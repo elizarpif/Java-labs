@@ -17,8 +17,8 @@ public class Main {
         System.out.println("укажите имя файла конфигурации");
 
         String name = in.nextLine();
-        System.out.println("-> condition.json");
-        Condition con = new Condition("condition.json");
+        //System.out.println("-> condition.json");
+        Condition con = new Condition(name);
 
         Map<String, String> leftBracket = new HashMap<>();
         Map<String, String> rightBracket = new HashMap<>();
@@ -28,6 +28,7 @@ public class Main {
         name = in.nextLine();// "brackets.txt";
         //System.out.println("-> brackets.txt");
         //name = "brackets.txt";
+
         try(FileReader f = new FileReader(name)){
             Stack<String> brackets = new Stack<>();
             int c; //а если скобка составная?
