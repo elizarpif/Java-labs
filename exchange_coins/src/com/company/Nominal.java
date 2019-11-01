@@ -18,7 +18,6 @@ public class Nominal implements Comparable<Nominal> {
     public void printNominal() {
         System.out.println(number + "[" + count + "]");
     }
-
     @Override
     public int compareTo(Nominal o) {
         if (o.number > number)
