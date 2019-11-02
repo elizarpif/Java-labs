@@ -16,22 +16,6 @@
           <text value="Add graph"/>
         </properties>
       </component>
-      <component id="c4b07" class="javax.swing.JButton" binding="addVertex_btn">
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Add vertex"/>
-        </properties>
-      </component>
-      <component id="55e8" class="javax.swing.JButton" binding="removeVertex_btn">
-        <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Remove vertex"/>
-        </properties>
-      </component>
       <tabbedpane id="a16d1" binding="tabPanel">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -42,6 +26,22 @@
         <border type="none"/>
         <children/>
       </tabbedpane>
+      <component id="44020" class="javax.swing.JButton" binding="undo_btn">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Undo"/>
+        </properties>
+      </component>
+      <component id="7c950" class="javax.swing.JButton" binding="redo_btn">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value=" Redo"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>
